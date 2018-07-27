@@ -1,0 +1,34 @@
+{
+  "name": "floor12/yii2-phone",
+  "description": "Yii2 phone formatter and validator.",
+  "type": "yii2-component",
+  "minimum-stability": "stable",
+  "keywords": [
+    "floor12",
+    "yii2 module",
+    "yii",
+    "yii2",
+    "yii 2",
+    "phone",
+    "validator",
+    "formatter"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "floor12",
+      "email": "primelifecoder@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "floor12\\phone\\": [
+        "src/"
+      ]
+    }
+  }
+}
