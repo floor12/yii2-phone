@@ -16,9 +16,9 @@ class PhoneValidatorAsset extends AssetBundle
     public $sourcePath = '@vendor/floor12/yii2-phone/src/';
 
     public $js = [
-        'phone.validator.js',
+        'validator.phone.js',
     ];
     public $depends = [
-        'yii\validators\ValidationAsse'
+        'yii\validators\ValidationAsset'
     ];
 }
