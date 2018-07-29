@@ -24,11 +24,19 @@
   "require": {
     "yiisoft/yii2": "~2.0.13"
   },
+  "require-dev": {
+    "phpunit/phpunit": "4.*"
+  },
   "autoload": {
     "psr-4": {
       "floor12\\phone\\": [
         "src/"
       ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "floor12\\phone\\tests\\": "tests/"
     }
   }
 }
