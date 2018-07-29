@@ -1,6 +1,6 @@
 # yii2-phone
 
-Валидатор и форматтор для телевонных номеров.
+Валидатор и форматтор для телефонных номеров.
 
 [![Build Status](https://travis-ci.org/floor12/yii2-phone.svg?branch=master)](https://travis-ci.org/floor12/yii2-phone)
 [![Latest Stable Version](https://poser.pugx.org/floor12/yii2-phone/v/stable)](https://packagist.org/packages/floor12/yii2-phone)
@@ -54,7 +54,7 @@ class User extends Model
 Форматирование телефонных номеров
 ------------
 
-Для представления численного значения номера в виде tel-ссылки используется класс `floor12\phone\Formatter`
+Для представления численного значения номера в виде tel-ссылки используется класс `floor12\phone\PhoneFormatter`
 
 ```php
 echo PhoneFormatter::run(79461234565);
