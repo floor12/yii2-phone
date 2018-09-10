@@ -20,6 +20,15 @@ class PhoneValidator extends \yii\validators\Validator
         }
     }
 
+    public function validate($value, &$error = null)
+    {
+        $value = str_replace([' ', '-', '(', ')', '_', '+'], '', trim($value));
+        $result = $this->validateValue($value);
+        if (empty($result)) {
+            return true;
+        }
+    }
+
 
     protected function validateValue($value)
     {
