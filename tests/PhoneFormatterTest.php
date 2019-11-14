@@ -10,8 +10,9 @@ namespace floor12\phone\tests;
 
 
 use floor12\phone\PhoneFormatter;
+use PHPUnit_Framework_TestCase;
 
-class PhoneFormatterTest extends \PHPUnit_Framework_TestCase
+class PhoneFormatterTest extends PHPUnit_Framework_TestCase
 {
     /**
      * If no valid number - just pass it though

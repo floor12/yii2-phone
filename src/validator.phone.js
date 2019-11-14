@@ -1,12 +1,10 @@
 function addMessage(messages, message, value) {
     messages.push(message.replace(/\{value\}/g, value));
-};
-
+}
 function isEmpty(value, trim) {
     return value === null || value === undefined || value == []
         || value === '' || trim && $.trim(value) === '';
-};
-
+}
 function validatePhone(value, messages, options) {
     value = value.replace(/\D/g, '');
 

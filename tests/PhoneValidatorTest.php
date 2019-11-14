@@ -9,8 +9,9 @@
 namespace floor12\phone\tests;
 
 use floor12\phone\PhoneValidator;
+use PHPUnit_Framework_TestCase;
 
-class PhoneValidatorTest extends \PHPUnit_Framework_TestCase
+class PhoneValidatorTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Wrong value type
