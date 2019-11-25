@@ -24,6 +24,7 @@ class PhoneValidator extends Validator
      */
     public function validateAttribute($model, $attribute)
     {
+        $model->$attribute = $this->clear($model->$attribute);
         $result = $this->validateValue($model->$attribute);
         if (!empty($result)) {
             $this->addError($model, $attribute, $result[0], $result[1]);
@@ -31,19 +32,12 @@ class PhoneValidator extends Validator
     }
 
     /**
-     * @param mixed $value
-     * @param null $error
-     * @return bool
-     * @throws NotSupportedException
+     * @param $value
+     * @return mixed
      */
-    public function validate($value, &$error = null)
+    protected function clear($value)
     {
-        $result = $this->validateValue($value);
-        if (!empty($result)) {
-            $error = $result[0];
-            return false;
-        }
-        return true;
+        return str_replace([' ', '-', '(', ')', '_', '+'], '', trim($value));
     }
 
     /**
@@ -54,13 +48,28 @@ class PhoneValidator extends Validator
         if (is_array($value) || is_object($value))
             return [Yii::t('yii', '{attribute} is invalid.'), []];
 
-        $value = str_replace([' ', '-', '(', ')', '_', '+'], '', trim($value));
-
         if (!is_numeric($value))
             return ["Телефонный номер должен содержать только цифры.", []];
 
         if ((strlen(strval($value)) > 12) || (strlen(strval($value)) < 11))
             return ["Телефонный номер должны быть длиною 11 или 12 цифр.", []];
+    }
+
+    /**
+     * @param mixed $value
+     * @param null $error
+     * @return bool
+     * @throws NotSupportedException
+     */
+    public function validate($value, &$error = null)
+    {
+        $value = $this->clear($value);
+        $result = $this->validateValue($this->clear($value));
+        if (!empty($result)) {
+            $error = $result[0];
+            return false;
+        }
+        return true;
     }
 
     /**
