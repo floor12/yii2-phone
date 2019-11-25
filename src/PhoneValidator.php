@@ -63,8 +63,10 @@ class PhoneValidator extends Validator
      */
     public function validate($value, &$error = null)
     {
+        if (!is_null($value) && !is_string($value) && !is_numeric($value))
+            return false;
         $value = $this->clear($value);
-        $result = $this->validateValue($this->clear($value));
+        $result = $this->validateValue($value);
         if (!empty($result)) {
             $error = $result[0];
             return false;
