@@ -59,7 +59,6 @@ class PhoneValidator extends Validator
      * @param mixed $value
      * @param null $error
      * @return bool
-     * @throws NotSupportedException
      */
     public function validate($value, &$error = null)
     {

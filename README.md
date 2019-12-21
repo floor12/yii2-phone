@@ -1,6 +1,8 @@
 # yii2-phone
 
-Валидатор и форматтор для телефонных номеров.
+Formatter and validator form phone numbers
+
+*Этот файл доступен на [русском языке](README_RU.md).*
 
 [![Build Status](https://travis-ci.org/floor12/yii2-phone.svg?branch=master)](https://travis-ci.org/floor12/yii2-phone)
 [![Latest Stable Version](https://poser.pugx.org/floor12/yii2-phone/v/stable)](https://packagist.org/packages/floor12/yii2-phone)
@@ -8,28 +10,28 @@
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-phone/downloads)](https://packagist.org/packages/floor12/yii2-phone)
 [![License](https://poser.pugx.org/floor12/yii2-phone/license)](https://packagist.org/packages/floor12/yii2-phone)
 
-## Установка
+## Installation
 
-Выполняем команду
-```bash
-$ composer require floor12/yii2-phone
-```
-или добавляем в секцию "required" файла composer.json
-```json
-"floor12/yii2-phone": "dev-master"
-```
+To use this extension run this command:
 
-## Использование
-Пакет позволяет валидировать телефонные номера и очищать их от лишних символов, а так же форматировать номера и генерировать ссылки.
+ ```bash
+ $ composer require floor12/yii2-phone
+ ```
+or add this to the `require` section of your composer.json.
+ ```json
+ "floor12/yii2-phone": "dev-master"
+ ```
+ 
 
-### Валидация
+## Usage
+This extension allows to validate phone numbers and save only numbers in db without any formatting. 
+It also include simple formatter to render formatted phone numbers as string or html `<a href='tel:'>` tag.
 
-Для хранения телефонных номеров в модели ActiveRecord тип поля должен быть позволять размещать строки не менее 12 символов.
+### Phone validation
+To store phone number in database, ActiveRecord model database field should be VARCHAR(12).
 
-Валидатор поддерживает валидацию и на бекенде и на клиентской стороне.
-
-Для добавления валидатора в вашу модель, достаточно указать класс `floor12\phone\PhoneValidator` среди валидаторов в методе `rules()`.
-Вот примитивный пример:
+The validator has backend and frontend (js) validation.
+To validate your field, add `floor12\phone\PhoneValidator` to `ActiveRecord::rules()` action like this:
 
 ```php
 use floor12\phone\PhoneValidator;
@@ -50,15 +52,14 @@ class User extends Model
 ``` 
 
 
-### Форматирование
+### Phone formatting
 
-Класс `floor12\phone\PhoneFormatter
-` позволяет отформотировать телефонный номер двумя методами: простое форматирование или генерация ссылки с href="tel:+xxxxxxxxxxx
-". Для этого класс обладает двумя статическими методами 
+Class `floor12\phone\PhoneFormatter` allows to render phone number as formatted string or as html `<a href="tel:">`, and has two static
+ methods: 
 - `PhoneFormatter::format($phone)`
 - `PhoneFormatter::a($phone,array $options= [])`
 
-*Примеры использования*
+*Formatting examples*
 
 ```php
 echo PhoneFormatter::format(79461234565);                       # +7 (946) 123-45-65
