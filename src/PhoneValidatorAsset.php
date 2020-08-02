@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
 
 class PhoneValidatorAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/floor12/yii2-phone/src/';
+    public $sourcePath = '@vendor/floor12/yii2-phone/src/assets/';
 
     public $js = [
         'validator.phone.js',
