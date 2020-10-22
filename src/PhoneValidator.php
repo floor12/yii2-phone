@@ -51,8 +51,8 @@ class PhoneValidator extends Validator
         if (!is_numeric($value))
             return ["Телефонный номер должен содержать только цифры.", []];
 
-        if ((strlen(strval($value)) > 12) || (strlen(strval($value)) < 11))
-            return ["Телефонный номер должны быть длиною 11 или 12 цифр.", []];
+        if ((strlen(strval($value)) > 13) || (strlen(strval($value)) < 11))
+            return ["Телефонный номер должны быть длиною 11 или 13 цифр.", []];
     }
 
     /**
