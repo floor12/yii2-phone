@@ -12,8 +12,8 @@ function validatePhone(value, messages, options) {
         return;
     }
 
-    if (value.length > 12 || value.length < 11)
-        addMessage(messages, "Телефонный номер должны быть длиною 11 или 12 цифр.", value);
+    if (value.length > 13 || value.length < 11)
+        addMessage(messages, "Телефонный номер должны быть длиною 11 или 13 цифр.", value);
 
 
 }
