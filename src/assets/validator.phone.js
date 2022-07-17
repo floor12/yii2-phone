@@ -1,17 +1,13 @@
 const f12phone = {
     validatePhone(value, messages, options) {
-
         if (this.isEmpty(value)) {
             return;
         }
-
         if (!this.isNumeric(value)) {
             this.addMessage(messages, f12_phone_error_format, value);
             return;
         }
-
         value = value.replace(/\D/g, '');
-
         if (value.length > 15 || value.length < 11)
             this.addMessage(messages, f12_phone_error_length, value);
     },
