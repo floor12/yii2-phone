@@ -5,10 +5,6 @@
   "minimum-stability": "stable",
   "keywords": [
     "floor12",
-    "yii2 module",
-    "yii",
-    "yii2",
-    "yii 2",
     "phone",
     "validator",
     "formatter"
@@ -22,6 +18,7 @@
     }
   ],
   "require": {
+    "php": ">=7.1.0",
     "yiisoft/yii2": "~2.0.13"
   },
   "require-dev": {

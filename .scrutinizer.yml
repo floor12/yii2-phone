@@ -1,7 +1,9 @@
-filter:
-  dependency_paths:
-    - "vendor/"
-
-tools:
-  external_code_coverage:
-    timeout: 2100
+build:
+  nodes:
+    coverage:
+      tests:
+        override:
+          - command: ./vendor/bin/phpunit --coverage-clover coverage.xml
+            coverage:
+              file: coverage.xml
+              format: clover
