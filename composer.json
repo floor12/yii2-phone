@@ -33,11 +33,5 @@
     "psr-4": {
       "floor12\\phone\\tests\\": "tests"
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ]
+  }
 }
