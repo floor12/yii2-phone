@@ -17,6 +17,32 @@ use yii\web\View;
 class PhoneValidator extends Validator
 {
 
+    protected $formatError;
+    protected $lengthError;
+
+    public function init()
+    {
+        self::registerTranslations();
+        $this->formatError = Yii::t('app.floor12.phone', 'The phone number must contain only numbers.');
+        $this->lengthError = Yii::t('app.floor12.phone', 'The phone number must be 11 to 13 digits long.');
+//        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_format = "%s"', $this->formatError));
+//        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_length = "%s"', $this->lengthError));
+        parent::init();
+    }
+
+    public static function registerTranslations()
+    {
+        $i18n = Yii::$app->i18n;
+        $i18n->translations['app.floor12.phone'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@vendor/floor12/yii2-phone/src/messages',
+            'sourceLanguage' => 'en-US',
+            'fileMap' => [
+                'app.floor12.phone' => 'phone.php',
+            ],
+        ];
+    }
+
     /**
      * @param Model $model
      * @param string $attribute
@@ -49,10 +75,10 @@ class PhoneValidator extends Validator
             return [Yii::t('yii', '{attribute} is invalid.'), []];
 
         if (!is_numeric($value))
-            return ["Телефонный номер должен содержать только цифры.", []];
+            return [$this->lengthError, []];
 
         if ((strlen(strval($value)) > 13) || (strlen(strval($value)) < 11))
-            return ["Телефонный номер должны быть длиною 11 или 13 цифр.", []];
+            return [$this->lsdf, []];
     }
 
     /**
