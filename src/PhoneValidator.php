@@ -24,9 +24,9 @@ class PhoneValidator extends Validator
     {
         self::registerTranslations();
         $this->formatError = Yii::t('app.floor12.phone', 'The phone number must contain only numbers.');
-        $this->lengthError = Yii::t('app.floor12.phone', 'The phone number must be 11 to 13 digits long.');
-//        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_format = "%s"', $this->formatError));
-//        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_length = "%s"', $this->lengthError));
+        $this->lengthError = Yii::t('app.floor12.phone', 'The phone number must be 11 to 15 digits long.');
+        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_format = "%s";', $this->formatError), View::POS_END);
+        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_length = "%s";', $this->lengthError), View::POS_END);
         parent::init();
     }
 
@@ -75,10 +75,10 @@ class PhoneValidator extends Validator
             return [Yii::t('yii', '{attribute} is invalid.'), []];
 
         if (!is_numeric($value))
-            return [$this->lengthError, []];
+            return [$this->formatError, []];
 
-        if ((strlen(strval($value)) > 13) || (strlen(strval($value)) < 11))
-            return [$this->lsdf, []];
+        if ((strlen(strval($value)) > 15) || (strlen(strval($value)) < 11))
+            return [$this->lengthError, []];
     }
 
     /**
@@ -109,7 +109,7 @@ class PhoneValidator extends Validator
     {
         PhoneValidatorAsset::register($view);
         $options = $this->getClientOptions($model, $attribute);
-        return 'validatePhone(value, messages, ' . json_encode($options, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ');';
+        return 'f12phone.validatePhone(value, messages, ' . json_encode($options, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ');';
     }
 
 }
