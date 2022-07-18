@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: floor12
- * Date: 07.01.2018
- * Time: 12:45
- */
 
 namespace floor12\phone\tests;
 
 
 use floor12\phone\PhoneFormatter;
 use PHPUnit\Framework\TestCase;
-use Yii;
 
 
 class PhoneFormatterTest extends TestCase
