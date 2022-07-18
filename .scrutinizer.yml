@@ -1,9 +1,11 @@
 build:
   nodes:
     coverage:
+      environment:
+        php: 8.0
       dependencies:
         before:
-          - apt-get install ca-certificates
+          - sudo apt-get install -y ca-certificates
       tests:
         override:
           - command: ./vendor/bin/phpunit --coverage-clover coverage.xml
