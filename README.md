@@ -4,9 +4,9 @@ Formatter and validator form phone numbers
 
 *Этот файл доступен на [русском языке](README_RU.md).*
 
-[![Build Status](https://travis-ci.org/floor12/yii2-phone.svg?branch=master)](https://travis-ci.org/floor12/yii2-phone)
+[![Build Status](https://scrutinizer-ci.com/g/floor12/yii2-phone/badges/build.png?b=master)](https://scrutinizer-ci.com/g/floor12/yii2-phone/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/floor12/yii2-phone/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/floor12/yii2-phone/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/floor12/yii2-phone/v/stable)](https://packagist.org/packages/floor12/yii2-phone)
-[![Latest Unstable Version](https://poser.pugx.org/floor12/yii2-phone/v/unstable)](https://packagist.org/packages/floor12/yii2-phone)
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-phone/downloads)](https://packagist.org/packages/floor12/yii2-phone)
 [![License](https://poser.pugx.org/floor12/yii2-phone/license)](https://packagist.org/packages/floor12/yii2-phone)
 
