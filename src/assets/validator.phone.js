@@ -1,5 +1,6 @@
 const f12phone = {
     validatePhone(value, messages, options) {
+        value = value.replace(/_|-| |\(|\)|\+/g, '');
         if (this.isEmpty(value)) {
             return;
         }
