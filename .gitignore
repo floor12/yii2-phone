@@ -23,13 +23,13 @@ composer.phar
 
 # phpunit itself is not needed
 phpunit.phar
+
 # local phpunit config
-/phpunit.xml
+phpunit.xml
 
-# vagrant runtime
-/.vagrant
 
-tests/_output/*
+# composer itself is not needed
+composer.lock
 
-/composer.lock
-/phpunit.xml
+# phpunit resutl cache
+.phpunit.result.cache

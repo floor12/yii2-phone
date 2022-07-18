@@ -9,9 +9,9 @@
 namespace floor12\phone\tests;
 
 use floor12\phone\PhoneValidator;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class PhoneValidatorTest extends PHPUnit_Framework_TestCase
+class PhoneValidatorTest extends TestCase
 {
     /**
      * Wrong value type
@@ -30,7 +30,7 @@ class PhoneValidatorTest extends PHPUnit_Framework_TestCase
         $model = new User();
         $model->phone = 123;
         $this->assertFalse($model->validate());
-        $this->assertEquals("Телефонный номер должны быть длиною 11 или 12 цифр.", $model->errors['phone'][0]);
+        $this->assertEquals("The phone number must be 11 to 15 digits long.", $model->errors['phone'][0]);
 
         $validator = new PhoneValidator();
         $this->assertFalse($validator->validate($model->phone));
@@ -44,7 +44,7 @@ class PhoneValidatorTest extends PHPUnit_Framework_TestCase
         $model = new User();
         $model->phone = 121231312312313123;
         $this->assertFalse($model->validate());
-        $this->assertEquals("Телефонный номер должны быть длиною 11 или 12 цифр.", $model->errors['phone'][0]);
+        $this->assertEquals("The phone number must be 11 to 15 digits long.", $model->errors['phone'][0]);
 
         $validator = new PhoneValidator();
         $this->assertFalse($validator->validate($model->phone));
@@ -58,7 +58,7 @@ class PhoneValidatorTest extends PHPUnit_Framework_TestCase
         $model = new User();
         $model->phone = '7926849852dd';
         $this->assertFalse($model->validate());
-        $this->assertEquals("Телефонный номер должен содержать только цифры.", $model->errors['phone'][0]);
+        $this->assertEquals("The phone number must contain only numbers.", $model->errors['phone'][0]);
 
         $validator = new PhoneValidator();
         $this->assertFalse($validator->validate($model->phone));

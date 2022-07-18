@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: floor12
- * Date: 09.03.2017
- * Time: 9:48
- */
 
 namespace floor12\phone;
 
