@@ -5,6 +5,7 @@ Formatter and validator form phone numbers
 *Этот файл доступен на [русском языке](README_RU.md).*
 
 [![Build Status](https://scrutinizer-ci.com/g/floor12/yii2-phone/badges/build.png?b=master)](https://scrutinizer-ci.com/g/floor12/yii2-phone/build-status/master)
+[![Code quality score](https://scrutinizer-ci.com/g/floor12/yii2-phone/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/floor12/yii2-phone/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/floor12/yii2-phone/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/floor12/yii2-phone/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/floor12/yii2-phone/v/stable)](https://packagist.org/packages/floor12/yii2-phone)
 [![Total Downloads](https://poser.pugx.org/floor12/yii2-phone/downloads)](https://packagist.org/packages/floor12/yii2-phone)
