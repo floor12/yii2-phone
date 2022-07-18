@@ -1,0 +1,6 @@
+version: "3.5"
+services:
+  php:
+    image: registry.gitlab.com/floor12/images:basic71
+    volumes:
+      - ./:/app:delegated
