@@ -28,7 +28,7 @@ This extension allows to validate phone numbers and save only numbers in db with
 It also include simple formatter to render formatted phone numbers as string or html `<a href='tel:'>` tag.
 
 ### Phone validation
-To store phone number in database, ActiveRecord model database field should be VARCHAR(12).
+To store phone number in database, ActiveRecord model database field should be VARCHAR(15).
 
 The validator has backend and frontend (js) validation.
 To validate your field, add `floor12\phone\PhoneValidator` to `ActiveRecord::rules()` action like this:
