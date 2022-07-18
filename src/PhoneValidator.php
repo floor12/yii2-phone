@@ -5,7 +5,6 @@ namespace floor12\phone;
 
 use Yii;
 use yii\base\Model;
-use yii\base\NotSupportedException;
 use yii\validators\Validator;
 use yii\web\View;
 
@@ -41,7 +40,6 @@ class PhoneValidator extends Validator
     /**
      * @param Model $model
      * @param string $attribute
-     * @throws NotSupportedException
      */
     public function validateAttribute($model, $attribute)
     {
@@ -66,14 +64,17 @@ class PhoneValidator extends Validator
      */
     protected function validateValue($value)
     {
-        if (is_array($value) || is_object($value))
+        if (is_array($value) || is_object($value)) {
             return [Yii::t('yii', '{attribute} is invalid.'), []];
+        }
 
-        if (!is_numeric($value))
+        if (!is_numeric($value)) {
             return [$this->formatError, []];
+        }
 
-        if ((strlen(strval($value)) > 15) || (strlen(strval($value)) < 11))
+        if ((strlen(strval($value)) > 15) || (strlen(strval($value)) < 11)) {
             return [$this->lengthError, []];
+        }
     }
 
     /**
@@ -83,8 +84,9 @@ class PhoneValidator extends Validator
      */
     public function validate($value, &$error = null)
     {
-        if (!is_null($value) && !is_string($value) && !is_numeric($value))
+        if (!is_null($value) && !is_string($value) && !is_numeric($value)) {
             return false;
+        }
         $value = $this->clear($value);
         $result = $this->validateValue($value);
         if (!empty($result)) {
