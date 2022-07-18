@@ -1,8 +1,10 @@
 build:
+  image: default-bionic
+  environment:
+    php:
+      version: 7.4.28
   nodes:
     coverage:
-      environment:
-        php: 8.0
       dependencies:
         before:
           - sudo apt-get install -y ca-certificates
