@@ -20,8 +20,8 @@ class PhoneValidator extends Validator
         self::registerTranslations();
         $this->formatError = Yii::t('app.floor12.phone', 'The phone number must contain only numbers.');
         $this->lengthError = Yii::t('app.floor12.phone', 'The phone number must be 11 to 15 digits long.');
-        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_format = "%s";', $this->formatError), View::POS_END);
-        Yii::$app->getView()->registerJs(sprintf('const f12_phone_error_length = "%s";', $this->lengthError), View::POS_END);
+        Yii::$app->getView()->registerJs(sprintf('f12_phone_error_format = "%s";', $this->formatError), View::POS_END);
+        Yii::$app->getView()->registerJs(sprintf('f12_phone_error_length = "%s";', $this->lengthError), View::POS_END);
         parent::init();
     }
 
