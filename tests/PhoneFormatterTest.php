@@ -30,6 +30,16 @@ class PhoneFormatterTest extends TestCase
     }
 
     /**
+     * Format 11 digits number
+     */
+    public function testPhone11DigitsLongCountry()
+    {
+        $phone = 34660393000;
+        $result = PhoneFormatter::format($phone, 2);
+        $this->assertEquals("+34 (660) 39-30-00", $result);
+    }
+
+    /**
      * Create link with 11 digits number
      */
     public function testPhone11DigitsLink()
@@ -37,6 +47,16 @@ class PhoneFormatterTest extends TestCase
         $phone = 79208498755;
         $result = PhoneFormatter::a($phone);
         $this->assertEquals("<a href=\"tel:+{$phone}\">+7 (920) 849-87-55</a>", $result);
+    }
+
+    /**
+     * Create link with 11 digits number
+     */
+    public function testPhone11DigitsLinkLongCountry()
+    {
+        $phone = 34660393000;
+        $result = PhoneFormatter::a($phone, [], 2);
+        $this->assertEquals("<a href=\"tel:+{$phone}\">+34 (660) 39-30-00</a>", $result);
     }
 
     /**
